@@ -41,6 +41,8 @@ public class EnumSetExample {
         System.out.println(messages);
         messages = EnumSet.of(Messages.HELLO);
         System.out.println(messages);
+        messages = EnumSet.noneOf(Messages.class);
+        System.out.println(messages);
         // What is interesting and important here?
         // 1. it uses only 64 bits to store data (if size of enum < 64)
         // 2. it is fast.

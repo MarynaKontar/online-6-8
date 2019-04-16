@@ -1,7 +1,6 @@
 package ua.goit.online67.fourth_example;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Example for sets collection.
@@ -33,44 +32,68 @@ public class SetExample {
     }
 
     public static void main(String[] args) {
-        // To add element into set you can use already known method add:
-        System.out.println(integers.add(1));
-        // Now add will return false in case when set already contains same element.
-        System.out.println(integers.add(1));
-        System.out.println(integers);
-        // As you see only only number exists in collection: how hash set keeping uniqueness?
-        // Hash set is backed (inside) by hash map (will be covered in next lesson more)
-        // which means that every time we add element into set next thing happens:
-        // 1. Calculation of hash code and get of hash bucked.
-        // 2. When two elements have equal hash code - java will search in bucked (linked list inside)
-        // until found corresponding element
-        ///
-        // buckets = LinkedList[X];
-        // 1. int hash = o.hashCode();
-        // 2. LinkedList list = buckets[hash % X]
-        // 3. if (!list.contains(o)) {
-        //       list.add(o);
-        // }
-        // Worst case: O(N), best case - O(1).
-        integers.add(1);
-        System.out.println(integers.contains(1));
-        // When we cannot use hash set?
-        // 1. Storing arrays: arrays hash code are calculated using natives and changes everytime.
-        int[] val1 = {1};
-        int[] val2 = {1};
-        Set<int[]> elements = new HashSet<>();
-        System.out.println(elements.add(val1));
-        System.out.println(elements.contains(val2));
-        //2. Objects with mutable hash code.
-        State s = new State();
-        s.val = 10;
-        Set<State> states = new HashSet<>();
-        states.add(s);
-        s.val = 20;
-        // As you see event for same object reference element not found.
-        System.out.println(states.contains(s));
-        s.val = 10;
-        System.out.println(states.contains(s));
-        // So main rule - hash code and equals fields must be immutable.
+//        // To add element into set you can use already known method add:
+//        System.out.println(integers.add(1));
+//        // Now add will return false in case when set already contains same element.
+//        System.out.println(integers.add(1));
+//        System.out.println(integers);
+//        // As you see only only number exists in collection: how hash set keeping uniqueness?
+//        // Hash set is backed (inside) by hash map (will be covered in next lesson more)
+//        // which means that every time we add element into set next thing happens:
+//        // 1. Calculation of hash code and get of hash bucked.
+//        // 2. When two elements have equal hash code - java will search in bucked (linked list inside)
+//        // until found corresponding element
+//        ///
+//        // buckets = LinkedList[X];
+//        // 1. int hash = o.hashCode();
+//        // 2. LinkedList list = buckets[hash % X]
+//        // 3. if (!list.contains(o)) {
+//        //       list.add(o);
+//        // }
+//        // Worst case: O(N), best case - O(1).
+//        integers.add(1);
+//        System.out.println(integers.contains(1));
+//        // When we cannot use hash set?
+//        // 1. Storing arrays: arrays hash code are calculated using natives and changes everytime.
+//        int[] val1 = {1};
+//        int[] val2 = {1};
+//        Set<int[]> elements = new HashSet<>();
+//        System.out.println(elements.add(val1));
+//        System.out.println(elements.contains(val2));
+//        //2. Objects with mutable hash code.
+//        State s = new State();
+//        s.val = 10;
+//        Set<State> states = new HashSet<>();
+//        states.add(s);
+//        s.val = 20;
+//        // As you see event for same object reference element not found.
+//        System.out.println(states.contains(s));
+//        s.val = 10;
+//        System.out.println(states.contains(s));
+//        // So main rule - hash code and equals fields must be immutable.
+
+
+
+        Comparator<Integer> comparator = new Comparator<Integer>() {
+
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                if( o1 > o2 ){
+                    return -1;
+                }
+                if( o1 < o2 ){
+                    return 1;
+                }
+                return 0;
+            }
+        };
+
+        Queue<Integer> intQueue = new PriorityQueue<>(10, comparator);
+        intQueue.add(2);
+        intQueue.add(1);
+        intQueue.add(3);
+//        while( !intQueue.isEmpty() ){
+//            System.out.println( intQueue.remove() );
+//        }
     }
 }

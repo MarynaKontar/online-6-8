@@ -1,9 +1,6 @@
 package ua.goit.online67.third_example;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Examples of linked lists.
@@ -47,6 +44,8 @@ public class LinkedListExample {
         deque.pollFirst();
         System.out.println(deque.pollLast());
         System.out.println(deque.pollLast());
+//SortedMap
+//        NavigableMap
         // Upper example is simple stack.
         // Linked lists use also more space then ArrayLists because of linked list node overhead.
     }

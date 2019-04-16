@@ -75,7 +75,7 @@ public class CollectionExample {
         //
         // REMEMBER! Java arrays are not covariant.
         // Next assignment wont work, even if all elements of array1 are integers.
-        //Integer[] array3 = (Integer[]) array1;
+        Integer[] array3 = (Integer[]) array1;
         //java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.Integer;
         //
         // Other methods are used in java8 and wont be covered right now :)

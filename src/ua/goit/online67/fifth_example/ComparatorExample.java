@@ -24,7 +24,7 @@ public class ComparatorExample {
             return -Integer.compare(o1, o2);
         }
     };
-    // Comparable object is interface which class can implements and methid (compareTo) will have same contract as comparator
+    // Comparable object is interface which class can implements and methid (compareTo) will h0000ave same contract as comparator
     private Comparable<Integer> val = 1;
     //
     //this

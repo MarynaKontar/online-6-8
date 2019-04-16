@@ -74,35 +74,35 @@ public class IteratorsExample {
     // This is actually how JDBC works.
     public static void main(String[] args) {
         // Create array and assign it to iterator.
-        int[] ar = {1, 2, 3, 4};
-        for (Iterator<Integer> it = new ArrayIterator(ar); it.hasNext(); ) {
-            Integer value = it.next();
-            System.out.println(value);
-        }
-        // try remove some of elements.
-        ArrayIterator it = new ArrayIterator(ar);
-        while (it.hasNext()) {
-            it.next();
-            it.remove();
-        }
-        // as you see our initial array is not changed, but resulting array is empty.
-        System.out.println(Arrays.toString(ar));
-        System.out.println(Arrays.toString(it.elements));
-        // Lets create iterator for linked list from example 3.
-        LList list = new LList();
-        for (int i = 0; i < 10; i++) {
-            list.addLast(i);
-        }
-        Iterator<Object> iterator = new LinkedListIterator(list);
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
-        iterator = new LinkedListIterator(list);
-        while (iterator.hasNext()) {
-            //iterator.next();
-            iterator.remove();
-        }
-        System.out.println(list);
+//        int[] ar = {1, 2, 3, 4};
+//        for (Iterator<Integer> it = new ArrayIterator(ar); it.hasNext(); ) {
+//            Integer value = it.next();
+//            System.out.println(value);
+//        }
+//        // try remove some of elements.
+//        ArrayIterator it = new ArrayIterator(ar);
+//        while (it.hasNext()) {
+//            it.next();
+//            it.remove();
+//        }
+//        // as you see our initial array is not changed, but resulting array is empty.
+//        System.out.println(Arrays.toString(ar));
+//        System.out.println(Arrays.toString(it.elements));
+//        // Lets create iterator for linked list from example 3.
+//        LList list = new LList();
+//        for (int i = 0; i < 10; i++) {
+//            list.addLast(i);
+//        }
+//        Iterator<Object> iterator = new LinkedListIterator(list);
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
+//        iterator = new LinkedListIterator(list);
+//        while (iterator.hasNext()) {
+//            //iterator.next();
+//            iterator.remove();
+//        }
+//        System.out.println(list);
         // In java each collection is extends interface Iterable which
         // return iterator for this collection.
         LinkedList<Integer> integers = new LinkedList<>(Arrays.asList(1, 2, 3, 4));
@@ -122,7 +122,7 @@ public class IteratorsExample {
         for (int value : integers) {
             System.out.println(value);
         }
-        // but gives error....
+        // but gives error....не дает ошибки ?????
         for (int value: new LinkedList<>(integers)) {
             System.out.println(value);
             integers.remove();

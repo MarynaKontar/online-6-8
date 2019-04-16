@@ -51,13 +51,15 @@ public class SortTest {
     }
 
     public static void main(String[] args) {
-        Order order1 = new Order("test1", BigDecimal.valueOf(0));
+        Order order1 = new Order("test1", BigDecimal.valueOf(4));
         Order order2 = new Order("test2", BigDecimal.valueOf(1));
-        Order order3 = new Order("test0", BigDecimal.valueOf(4));
+        Order order3 = new Order("test0", BigDecimal.valueOf(2));
         List<Order> orders = new ArrayList<>();
         orders.add(order1);
         orders.add(order2);
         orders.add(order3);
+        System.out.println(orders);
+//        Collections.sort(orders);
         Collections.sort(orders, new OrderComparator());
         System.out.println(orders);
     }
